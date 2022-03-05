@@ -26,8 +26,9 @@ function changeTheme()
   {
     document.querySelector(".trigger").classList.remove(classes[1], classes[2]);
     state = 0;
-    document.getElementsByTagName("link")[3].remove();
-    document.getElementsByTagName("link")[3].remove();
+    document.getElementsByTagName("link")[0].remove();
+    document.getElementsByTagName("link")[1].remove();
+    document.getElementsByTagName("link")[2].remove();
   }
 }
 document.querySelector(".trigger").addEventListener("click", changeTheme);
