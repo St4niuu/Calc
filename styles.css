@@ -1,0 +1,226 @@
+@import url("https://fonts.google.com/specimen/Spartan");
+:root {
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-keypad-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+  --key-background-blue: hsl(225, 21%, 49%);
+  --key-shadow-blue: hsl(224, 28%, 35%);
+  --key-background-toggle: hsl(6, 63%, 50%);
+  --key-shadow-red: hsl(6, 70%, 34%);
+  --key-background-orange: hsl(30, 25%, 89%);
+  --key-shadow-orange: hsl(28, 16%, 65%);
+  --text: hsl(221, 14%, 31%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 32px;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+  background-color: var(--main-background);
+}
+
+.calc {
+  width: 15rem;
+  height: 25rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.header .theme {
+  font-size: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.header .theme .string {
+  letter-spacing: 0.1rem;
+}
+
+.header .theme .box-trigger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.header .theme .box-trigger .number {
+  width: 2.5rem;
+  height: 1rem;
+  letter-spacing: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .theme .box-trigger .box {
+  width: 2.5rem;
+  height: 1rem;
+  background-color: var(--toggle-keypad-background);
+  border-radius: 20px;
+}
+
+.header .theme .box-trigger .box .trigger {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--key-background-toggle);
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: 1s -webkit-transform;
+  transition: 1s -webkit-transform;
+  transition: 1s transform;
+  transition: 1s transform, 1s -webkit-transform;
+}
+
+.header .theme .box-trigger .box .trigger1 {
+  -webkit-transform: translate(20%, 15%);
+          transform: translate(20%, 15%);
+}
+
+.header .theme .box-trigger .box .trigger2 {
+  -webkit-transform: translate(110%, 15%);
+          transform: translate(110%, 15%);
+}
+
+.header .theme .box-trigger .box .trigger3 {
+  -webkit-transform: translate(210%, 15%);
+          transform: translate(210%, 15%);
+}
+
+.screen {
+  width: 100%;
+  height: 4.5rem;
+  background-color: var(--screen-background);
+  border-radius: 15px;
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 200%;
+  color: white;
+}
+
+.pad {
+  margin-top: 1rem;
+  width: 100%;
+  height: 16.5rem;
+  background-color: var(--toggle-keypad-background);
+  border-radius: 15px;
+  padding: 0.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  -ms-grid-rows: auto auto auto auto;
+      grid-template-rows: auto auto auto auto;
+  gap: 0.5rem;
+}
+
+.pad .button {
+  position: relative;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.pad .button div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.pad .common {
+  background-color: var(--key-background-orange);
+  color: var(--text);
+}
+
+.pad .special {
+  background-color: var(--key-background-blue);
+  color: white;
+}
+
+.pad .reset {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.pad .result {
+  background-color: var(--key-background-toggle);
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 5;
+  color: white;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,179 @@
+@import url("https://fonts.google.com/specimen/Spartan");
+:root
+{
+    --main-background: hsl(268, 75%, 9%);
+    --toggle-keypad-background: hsl(268, 71%, 12%);
+    --screen-background: hsl(281, 89%, 26%);
+    --key-background-blue: hsl(285, 91%, 52%);
+    --key-shadow-blue: hsl(176, 100%, 44%);
+    --key-background-toggle: hsl(177, 92%, 70%);
+    --key-shadow-red: hsl(268, 47%, 21%);
+    --key-background-orange: hsl(268, 47%, 21%);
+    --key-shadow-orange: hsl(52, 100%, 62%);
+    --text: hsl(52, 100%, 62%);
+}
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body
+{
+    width: 100%;
+    height: 100%;
+    font-size: 32px;
+}
+body
+{
+    font-family: "Spartan", sans-serif;
+    font-weight: 700;
+    background-color: var(--main-background);
+}
+// MAIN 
+.calc
+{
+    width: 15rem;
+    height: 25rem;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+// MAIN END
+// HEADER
+.header
+{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: hsl(52, 100%, 62%);
+    .theme
+    {
+        font-size: 50%;
+        display: flex;
+        align-items: center;
+        column-gap: 0.5rem;
+        width: fit-content;
+        height: fit-content;
+        .string
+        {
+            letter-spacing: 0.1rem;
+        }
+        .box-trigger
+        {
+            display: flex;
+            flex-direction: column; 
+            width: fit-content;
+            height: fit-content;
+            .number
+            {
+                width: 2.5rem;
+                height: 1rem;
+                letter-spacing: 0.2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .box
+            {
+                width: 2.5rem;
+                height: 1rem;
+                background-color: var(--toggle-keypad-background);
+                border-radius: 20px;
+                .trigger
+                {
+                    width: 0.75rem;
+                    height: 0.75rem;
+                    border-radius: 50%;
+                    background-color: var(--key-background-toggle);
+                    position: relative;
+                    cursor: pointer;
+                    transition: 1s transform;
+                }
+                .trigger1
+                {
+                    transform: translate(20%, 15%);
+                }
+                .trigger2
+                {
+                    transform: translate(110%, 15%);
+                }
+                .trigger3
+                {
+                    transform: translate(210%, 15%);
+                }
+            }
+        }
+    }
+}
+// HEADER END
+// SCREEN
+.screen
+{
+    width: 100%;
+    height: 4.5rem;
+    background-color: var(--screen-background);
+    border-radius: 15px;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 200%;
+    color: white;
+}
+// SCREEN END
+// PAD
+.pad
+{
+    margin-top: 1rem;
+    width: 100%;
+    height: 16.5rem;
+    background-color: var(--toggle-keypad-background);
+    border-radius: 15px;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    gap: 0.5rem;
+    .button
+    {
+        position: relative;
+        border-radius: 20px;
+        cursor: pointer;
+        div
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .common
+    {
+        background-color: var(--key-background-orange);
+        color: var(--text);
+    }
+    .special
+    {
+        background-color: var(--key-background-blue);
+        color: white;
+    }
+    .reset
+    {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .result
+    {
+        background-color: var(--key-background-toggle);
+        grid-column-start: 3;
+        grid-column-end: 5;
+        color: white;
+    }
+}
+// PAD END
